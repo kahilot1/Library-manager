@@ -5,13 +5,16 @@
 <div id='blBg'>
     <div id=contentResults>
         {% for i in boxes %}
-            <div class=contentBoxes>{{i.title}}</div>
+            <div class=contentBoxes><a href={{i.id}}>{{i.title}}</a></div>
         {% endfor %}
     </div>
     <br><br><br><br><br><br><br><br><br><br><br><br><br>
     {%for i in boxes%}
         <br><br><br><br><br><br>
     {%endfor%}
-
+    {%if yes%}
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    {%endif%}
 </div>
 {%endblock content%}
