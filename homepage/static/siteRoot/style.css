@@ -138,8 +138,8 @@ body #blBg #contentResults .contentBoxes{
     transition: all 0.5s;
 }
 body #blBg #contentResults .contentBoxes:hover{
-    background-color: coral;
+    /*background-color: coral;*/
+    background-color: aqua;
     color: azure;
-    width: width + 10px;
 }
 
