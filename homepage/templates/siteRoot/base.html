@@ -1,7 +1,204 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../static/siteRoot/style.css">
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet"/>
+    <style>
+    
+.header{
+    position: relative;
+    width: 100%;
+    z-index: 100;
+}
+
+
+
+ul{
+    top: 0;
+    position: fixed;
+    font-size: 3vh; 
+    list-style-type: none;
+    margin-top: 0;
+    margin-left: 0;
+    padding: 0;
+    left: 0;
+    background-color: rgb(0, 135, 150);
+    overflow: hidden;
+    width: 100%;
+    
+}
+
+ul li{
+    min-height: 5vh;
+    padding-top: 1vh;
+    background-color: rgb(0, 135, 150);
+    float: left;
+    
+}
+
+ul li a{
+    text-decoration: none;
+    background-color: rgb(0, 124, 138)
+}
+
+ul li a:hover{
+    color: white;
+    background-color: rgb(0, 107, 119);
+    
+}
+
+
+#afss{
+    padding-left: calc(50px );
+    padding-right: calc(8vw);
+    font-size: 2vw;
+    color: white;
+    top: -50%;
+    transform: translate(0%, -11%);
+}
+.afs{
+    color: white;
+    transition: all 0.5s;
+    font-size: 1.25vw;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+    
+    text-decoration: none;
+    
+}
+
+body{
+    margin-top: 6vh;
+    margin-left: 0;
+    margin-bottom: 0;
+    background-color:rgb(250, 235, 215);
+    
+}
+
+body #shell{
+    min-width: 100vw;
+    min-height: 100vh ;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: rgb(250, 235, 215);
+    color: rgb(0, 135, 150);
+}
+
+body #shell #kms{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding-top: 1vh;
+
+    width: 40vw;
+    height: 10vh;
+    transform: translate(-50%, -195%);
+    background-color: rgb(226, 214, 197);
+    /*rgb(0, 135, 150)*/
+    /*rgb(187, 136, 102)*/
+    border-radius: 100px;
+}
+
+body #aboutPage{
+    position: absolute;
+    background-color: rgb(226, 214, 197);
+    width: 40vw;
+    padding: 2vw;
+    border-radius: 100px;
+    top:50%;
+    left:50%;
+    transform: translate(-50%, 0%);
+}
+
+
+
+body #shell #title{
+    padding-left: 6.5vw;
+    font-size: 3vw;
+}
+
+/*Booklist*/
+body #blBg{
+    /*9.5*/
+    
+    position:relative;
+    overflow-block:initial;
+    width: 100vw;
+    resize: vertical;
+    height: fit-content;
+    background-size: cover;
+    background-color: rgb(250, 235, 215);
+    color: rgb(0, 135, 150);
+}
+
+body #blBg #contentResults{
+    position:absolute;
+    width: 100vw;
+    top: 150px;
+}
+body #blBg #contentResults .contentBoxes{
+    margin-right: 20vw;
+    border-radius: 30px;
+    position: relative;
+    margin-left: 25vw;
+    text-align: center;
+    margin-top: 30px;
+    padding: 10px;
+    font-size: 2vw;
+    background-color: rgb(226, 214, 197);
+    transition: all 0.25s;
+    transition-delay: 0.15s;
+}
+body #blBg #contentResults .contentBoxes a{
+    text-decoration: none;
+    color: rgb(0, 135, 150);
+    transition: all 0.25s;
+    transition-delay:0.25s;
+}
+body #blBg #contentResults .contentBoxes:hover{
+    color: azure;
+    background-color: coral;
+    scale: 1.5;
+}
+body #blBg #contentResults .contentBoxes:hover > a{
+    color: azure;
+}
+
+body .add_form{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    width: 50vw;
+    height: 80vh;
+    background-color: rgb(0, 135, 150);
+    border-radius: 100px;
+    padding: 2vw;
+    color: white;
+    font-size: 2vw;
+    text-align: center;}
+
+#id_title{
+    background-color: rgb(223, 252, 255);
+    width: 40vw;
+}
+
+#id_author{background-color: rgb(223, 252, 255);
+width: 40vw;}
+
+#id_summary{background-color: rgb(223, 252, 255);
+width: 40vw;}
+
+#id_id{
+    background-color: rgb(223, 252, 255);
+    width: 40vw;
+}
+#form{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+    </style>
     <title>Library Main Menu</title>
     <div class=header>
         <ul>

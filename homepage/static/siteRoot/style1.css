@@ -5,7 +5,7 @@ html{
 h1{
     width: 100%;
     background-color: rgb(226, 214, 197);
-    background-size: cover;
+    background-size: cover; 
     position: absolute;
     margin-top: 0;
     top: 0;
@@ -14,7 +14,7 @@ h1{
 
 h1 a{
     text-decoration: none;
-    font-size: 3rem;
+    font-size: 3vw;
     margin-left: 20px;
     color: rgb(0, 135, 150);
     
@@ -23,7 +23,7 @@ h1 a{
 }
 
 h1 #title{
-    font-size: 3rem;
+    font-size: 3vw;
     position: absolute;
     left:40vw;
     top:0;
@@ -31,8 +31,28 @@ h1 #title{
 }
 
 h1 #id{
-    font-size: 3rem;
+    font-size: 3vw;
     position: absolute;
     left: 80vw;
     top:0;
+}
+
+#author{
+    font-size: 3vw;
+    color: rgb(0, 135, 150);
+    position: absolute;
+    margin-left: 20px;
+    top: 10vh;
+    background-color: rgb(226, 214, 197);
+}
+
+#summary{
+    font-size: 3vw;
+    color: rgb(0, 135, 150);
+    position: absolute;
+    margin-left: 20px;
+    margin-right: 2000px;
+    min-width: calc(100%);
+    top: 20vh;
+    background-color: rgb(226, 214, 197);
 }

@@ -1,2 +1,11 @@
 {% extends "siteRoot/base.html" %}
+{% load crispy_forms_tags %}
 
+
+{%block content%}
+<br><br><br>
+<div id=form>
+{% crispy form form.helper %}
+</div>
+
+{%endblock content%}

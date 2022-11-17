@@ -4,9 +4,15 @@
 <head>
 <meta charset="utf-8">
 <link rel="stylesheet" href="../static/siteRoot/style1.css">
-<h1><a href='/booklist'>Back to index<a> <div id=title>{{book_id.title}}</div><div id=id>{{book_id.id}}</div></h1>
+
 </head>
 
-
+<body>
+<h1><a href='/booklist'>Back to index<a> <div id=title>{{book_id.title}}</div><div id=id>{{book_id.author}}</div></h1>
+<div id=author>Book ID: {{book_id.id}}</div>
+<div id=summary>
+    Book description: <br>{{book_id.summary}} 
+</div>
+</body>
 
 </html>
