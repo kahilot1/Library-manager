@@ -2,11 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import books
 from .forms import add_book
-boxes = []
-ls = books.objects.all()
-for i in ls:
-    boxes.append({'title':f'{i.title}', 'id':f'{i.id}', 'author':f'{i.author}', 'summary':f'{i.summary}'})
+from django.db.models import Q
 
+boxes = []
 # {'title':'Number 1'}
 #for i in range(30):
 #    boxes.append({'title':f'Number {i+4}'})
@@ -25,7 +23,6 @@ def addBook(request):
             author = form.cleaned_data['author']
             id = form.cleaned_data['id']
             books.objects.create(title=title, summary=summary, author=author, id=id)
-            boxes.append({'title':f'{title}', 'id':f'{id}', 'author':f'{author}', 'summary':f'{summary}'})
             print("Book added", title, summary, author, id)
             return render(request, "siteRoot/addBook.html", {'form':add_book(), 'success':True})
         else:
@@ -34,7 +31,24 @@ def addBook(request):
     return render(request, 'siteRoot/addBook.html', {'form': form})
 
 def listBook(request):
-    return render(request, "siteRoot/bookList.html", {"boxes":boxes, 'yes':len(boxes) < 10})
+    boxes = []
+    box= []
+    from .models import books
+    ls = books.objects.all()
+    for i in ls:
+        boxes.append({'title':f'{i.title}', 'id':f'{i.id}', 'author':f'{i.author}', 'summary':f'{i.summary}'})
+        box.append(i)
+    return render(request, "siteRoot/bookList.html", {"boxes":boxes, 'yes':len(boxes) < 10, 'box':box})
 
 def bookPage(request, book_id):
     return render(request, "siteRoot/bookPage.html", {"book_id":books.objects.get(id=book_id)})
+
+def search(request):
+    query = None
+    result = []
+    result1 = []
+    if request.method == "GET":
+        query = request.GET.get("search")
+        result = books.objects.filter(Q(title__icontains=query))
+        result1 = (books.objects.filter(author__icontains=query))
+    return render(request, 'siteRoot/search.html', {'query':query, 'result':result, 'yes':len(result) < 10, 'result1':result1})

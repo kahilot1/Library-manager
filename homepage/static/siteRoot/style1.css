@@ -56,3 +56,27 @@ h1 #id{
     top: 20vh;
     background-color: rgb(226, 214, 197);
 }
+
+#Date{
+    color: rgb(0, 135, 150);
+    font-size: 3vw;
+    min-width: calc(100%);
+    background-color: rgb(226, 214, 197);
+    position: absolute;
+    margin-left: 20px;
+    margin-top: 10vh;
+    top: 30vh;
+
+}
+
+#Checked{
+    color: rgb(0, 135, 150);
+    margin-top: 10vh;
+    font-size: 3vw;
+    min-width: calc(100%);
+    background-color: rgb(226, 214, 197);
+    position: absolute;
+    margin-left: 20px;
+    top: 40vh;
+}
+

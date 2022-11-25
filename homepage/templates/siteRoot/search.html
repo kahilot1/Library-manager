@@ -5,12 +5,24 @@
 <div id='blBg'>
     <div id='searchBox'><form action="{% url 'search' %}"><input id="searchBoxInputArea"type="text" name="search" placeholder="Search... Id or Title"></form></div>
     <div id=contentResults>
-        {% for i in box %}
-            <div class=contentBoxes><a href={{i.id}}>{{i.title}}</a></div>
+    {% if result %}
+        {% for i in result %}
+            <div class=contentBoxes><a href='/booklist/{{i.id}}'>{{i.title}}</a></div>
         {% endfor %}
+    {%endif%}
+    {%if result1%}
+        {% for i in result1 %}
+            {%if i not in result%}
+            <div class=contentBoxes><a href='/booklist/{{i.id}}'>{{i.title}}</a></div>
+            {%endif%}
+        {% endfor %}
+    {%endif%}
+    {%if not result and not result1%}
+        <div class='contentBoxes'><a href='/booklist/'>No Results</a></div>
+    {%endif%}
     </div>
     <br><br><br><br><br><br><br><br><br><br><br><br><br>
-    {%for i in boxes%}
+    {%for i in result%}
         <br><br><br><br><br><br>
     {%endfor%}
     {%if yes%}

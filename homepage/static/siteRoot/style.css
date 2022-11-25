@@ -171,3 +171,18 @@ body .add_form{
     font-size: 2vw;
     text-align: center;
 }
+
+body #searchBox{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50vw;
+    height: 10vh;
+    background-color: rgb(0, 135, 150);
+    border-radius: 100px;
+    padding: 2vw;
+    color: white;
+    font-size: 2vw;
+    text-align: center;
+}

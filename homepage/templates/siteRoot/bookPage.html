@@ -13,6 +13,17 @@
 <div id=summary>
     Book description: <br>{{book_id.summary}} 
 </div>
+<div id=Date>
+    Date Added: {{book_id.date}}
+</div>
+<div id=Checked>
+    Checked Out: 
+    {%if book_id.checked_out%}
+        Yes<br/> The book is checked out to: {{book_id.book_owner}}
+    {%else%}
+        No
+    {%endif%}
+</div>
 </body>
 
 </html>
