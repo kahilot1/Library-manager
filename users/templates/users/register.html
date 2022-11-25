@@ -1,0 +1,18 @@
+{%extends 'users/base.html'%}
+{% load crispy_forms_tags %}
+{%block content%}
+    <div id='registerForm'>
+        <form method='POST'>
+            {%csrf_token%}
+            <fieldset class="form-group">
+                <legend class='border-bottom mb-4'>Register</legend>
+                {{form|crispy}}
+            </fieldset>
+            
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Register</button>
+                <h4 class="text-muted h6">Already Have An Account? <a href='/login'>Click here!</a></h4>
+            </div>
+        </form>
+    </div>
+{%endblock content%}

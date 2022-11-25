@@ -3,7 +3,7 @@
 {%block content%}
 
 <div id='blBg'>
-    <div id='searchBox'><form action="{% url 'search' %}"><input id="searchBoxInputArea"type="text" name="search" placeholder="Search... Id or Title"></form></div>
+    <div id='searchBox'><form action="{% url 'search' %}"><input id="searchBoxInputArea"type="text" name="search" placeholder="Search... Id or Title or Author"></form></div>
     <div id=contentResults>
         {% for i in box %}
             <div class=contentBoxes><a href={{i.id}}>{{i.title}}</a></div>

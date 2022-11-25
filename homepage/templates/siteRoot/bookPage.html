@@ -19,7 +19,10 @@
 <div id=Checked>
     Checked Out: 
     {%if book_id.checked_out%}
-        Yes<br/> The book is checked out to: {{book_id.book_owner}}
+        Yes<br/> 
+            {%if isPartOf%}
+                The book is checked out to: {{book_id.book_owner}}
+            {%endif%}
     {%else%}
         No
     {%endif%}

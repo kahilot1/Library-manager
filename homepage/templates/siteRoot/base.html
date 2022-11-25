@@ -23,7 +23,7 @@ ul{
     left: 0;
     background-color: rgb(0, 135, 150);
     overflow: hidden;
-    width: 100%;
+    min-width: 100%;
     
 }
 
@@ -37,7 +37,7 @@ ul li{
 
 ul li a{
     text-decoration: none;
-    background-color: rgb(0, 124, 138)
+    background-color: rgb(0, 124, 138);
 }
 
 ul li a:hover{
@@ -45,7 +45,28 @@ ul li a:hover{
     background-color: rgb(0, 107, 119);
     
 }
-
+.loginSec a{
+    color: white;
+    padding:10px;
+    background-color: rgb(0, 124, 138);
+}
+.loginSec a:hover{
+    background-color: rgb(0, 107, 119);
+}
+.loginSec{
+    color: white;
+    background-color: rgb(0, 124, 138);
+    text-decoration: none;
+    top: 1.05vh;
+    position: fixed;
+    font-size: 3vh; 
+    list-style-type: none;
+    margin-top: 0;
+    margin-left: 0;
+    padding: 0;
+    left: 80vw;
+    overflow: hidden;
+}
 
 #afss{
     padding-left: calc(50px );
@@ -63,6 +84,12 @@ ul li a:hover{
     padding-right: 1.5vw;
     
     text-decoration: none;
+    
+}
+
+#login:hover{
+    color: white;
+    background-color: rgb(0, 107, 119);
     
 }
 
@@ -210,7 +237,7 @@ body #searchBox{
     text-align: center;
 }
 body #searchBoxInputArea{
-    width: 20vw;
+    width: 26.25vw;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
@@ -224,11 +251,24 @@ body #searchBoxInputArea:focus{
         <ul>
             <li id=afss>Northcoast National Primary Prison</li>
             <li><a class=afs href="/">Home</a></li>
-            <li><a class=afs href="#CheckOut">Check out book</a></li>
-            <li><a class=afs href="#CheckIn">Check in book</a></li>
             <li><a class=afs href="/booklist">Book index</a></li>
-            <li><a class=afs href="/addbook">Add a book</a></li>
+            {%if isPartOf%}
+                <li><a class=afs href="/addbook">Add a book</a></li>
+            {%endif%}
+            <li><a class=afs>         </a></li>
+            <li><a class=afs>         </a></li>
+            <li><a class=afs>         </a></li>
+            <li><a class=afs>         </a></li>
+            {%if user.is_authenticated%}
+                <li><a class=afs href="/logout">Logout</a></li>
+            {%else%}
+                <li><a class=afs href="/login">Login</a></li>
+                <li><a class=afs href="/register">Register</a></li>
+            {%endif%}
+            
+            
         </ul>
+        
     </div>  
 </head>
 
@@ -236,6 +276,13 @@ body #searchBoxInputArea:focus{
 
     
 <body>
+{%if messages%}
+    {%for message in messages%}
+        <div class="alert alert-{{message.tags}}">
+            {{message}}
+        </div>
+    {%endfor%}
+{%endif%}
 {% block content %}{% endblock %}
 </body>
 </html>
