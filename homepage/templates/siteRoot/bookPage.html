@@ -1,18 +1,19 @@
+{% load crispy_forms_tags %}
 <!DOCTYPE html>
 
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<link rel="stylesheet" href="../static/siteRoot/style1.css">
 
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+<link rel="stylesheet" href="../static/siteRoot/style1.css">
 </head>
 
 <body>
-<h1><a href='/booklist'>Back to index<a> <div id=title>{{book_id.title}}</div><div id=id>{{book_id.author}}</div></h1>
+<h1><a href='/booklist'>Back to index<a> <div id=title>Title: {{book_id.title}}</div><div id=id>Author: {{book_id.author}}</div></h1>
 <div id=author>Book ID: {{book_id.id}}</div>
-<div id=summary>
-    Book description: <br>{{book_id.summary}} 
-</div>
+
+
 <div id=Date>
     Date Added: {{book_id.date}}
 </div>
@@ -26,7 +27,13 @@
     {%else%}
         No
     {%endif%}
+
 </div>
+{%if isPartOf%}
+    <div id='Checkinout'>
+    {% crispy form form.helper %}
+    </div>
+{%endif%}
 </body>
 
 </html>

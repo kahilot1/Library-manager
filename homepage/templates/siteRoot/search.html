@@ -6,6 +6,8 @@
     <div id='searchBox'><form action="{% url 'search' %}"><input id="searchBoxInputArea"type="text" name="search" placeholder="Search... Id or Title or Author"></form></div>
     <div id=contentResults>
     {% if result %}
+        
+        <div class=contentBoxes><a href='/booklist'>Back to full index</a></div>
         {% for i in result %}
             <div class=contentBoxes><a href='/booklist/{{i.id}}'>{{i.title}}</a></div>
         {% endfor %}
